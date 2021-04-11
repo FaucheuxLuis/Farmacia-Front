@@ -2,8 +2,8 @@ import {Data} from "./data"
 
 export class JsonIngreso
 {
-    code: String;
-    message: String;
-    group: String;
+    code: string;
+    message: string;
+    group: string;
     data: Data;
 }

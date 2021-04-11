@@ -38,9 +38,14 @@ export class CambiarContrasenaComponent implements OnInit {
     debugger
     this.LoginServiceInyectado.cambiar(this.cambiar).subscribe((JsonIngreso)=>
     {
-      console.log(JsonIngreso.message);
-
-    })
+     // console.log(JsonIngreso.message);
+     this.LoginServiceInyectado.errorIngresarCambiar(JsonIngreso.message,JsonIngreso.code);
+     this.router.navigate(['usuarios']);
+    },
+    error => {
+      this.LoginServiceInyectado.errorIngresarCambiar(error.error.message,error.error.code);
+    }
+    )
     
     
   }

@@ -72,8 +72,11 @@ export class TitulosComponent implements OnInit {
           this.router.navigate(['usuarios']);
         }
       }
-    }, error => alert(error.error.message)
-
+    }, error => {
+      this.LoginServiceInyectado.errorIngresarLogin(error.error.message);
+      //alert(error.error.message);
+      
+    } 
 
 
     )
